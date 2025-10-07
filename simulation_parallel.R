@@ -2,7 +2,7 @@
 ## environment setup
 ################################################################################
 rm(list=ls())
-setwd("C:/Users/ywang/OneDrive - Corcept Therapeutics, Inc/Documents/JSM2025/")
+setwd("JSM2025/")
 
 library(readxl)
 library(clipr)
@@ -422,4 +422,5 @@ sim_res %>% group_by(n, p, rho, s, snr, method) %>% summarise(sim=n()) %>%
   filter(sim < nsim)
 sim_res %>% distinct(n, p, rho, s, snr) %>% dim
 saveRDS(sim_res, file = paste0("n", n_values, "p",
+
                                p_values, "beta", beta_type, ".rds"))
